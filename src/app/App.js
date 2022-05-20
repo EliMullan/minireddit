@@ -11,12 +11,11 @@ function App() {
   return (
     <Router>
       <Header />
-      <SideMenu />
         <Routes>
           <Route path='/listings/:title' element={<Listing />}></Route>
         </Routes>
         <Listings />     
-      <Footer />
+      <SideMenu />
     </Router>
   );
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 export function Search() {
     return (
-        <div className='search-bar'>
-            <input placeholder='search here'  /> 
-                
-        </div>
+        <form className='search-bar'>
+            <input placeholder='search here'  />    
+            <button type='submit' >Search</button>
+        </form>
     )
 }
