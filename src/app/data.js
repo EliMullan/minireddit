@@ -1,20 +1,18 @@
 
-const baseURL = 'https://www.reddit.com/r/';
-const endpoint = 'ProgrammerHumor';
-
-export async function getReddits() {
-    try {
-        const response = await fetch (`${baseURL}${endpoint}`);
-        if (response.ok) {
-            const jsonResponse = await response.json();
-            
-        }
-        throw new Error ('Request failed');
-    } catch (err) {
-        console.log(err);
-    }
+export const getData = (category) => {
+    fetch(`https://www.reddit.com/r/${category}.json`)
+        .then(function(res) {
+        return res.json();   // Convert the data into JSON
+        })
+        .then(function(data) {
+        console.log(data);   // Logs the data to the console
+        })
+        .catch(function(err) {
+        console.log(err);   // Log error if any
+        });
 }
 
+getData('programmerHumour');
 
 export const listings = [ {
     id: 1,
